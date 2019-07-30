@@ -19,7 +19,7 @@ public class AApplication {
 	}
 
 	/*
-     * SqlSessionFactory 설정 g
+     * SqlSessionFactory 설정
      */
     @Bean
     public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception{
