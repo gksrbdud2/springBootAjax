@@ -108,10 +108,10 @@
 						</goals>
 						<configuration>
 							<encoding>UTF-8</encoding>
-							<outputDirectory>${basedir}/target</outputDirectory>
+							<outputDirectory>${basedir}/target/aaaa</outputDirectory>
 							<resources>
 								<resource>
-									<diretory>src/main/resources/config/properties/${deploy.phase}</diretory>
+									<diretory>src/main/java</diretory>
 									<filtering>true</filtering>
 									<includes>
 											<include>**/*.xml</include>
