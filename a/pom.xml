@@ -97,21 +97,23 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
 				<executions>
 					<execution>
-						<id>copy-resources</id>
+						<id>default-resources</id>
 						<phase>validate</phase>
 						<goals>
+							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
 							<encoding>UTF-8</encoding>
-							<outputDirectory>${basedir}/target/aaaa</outputDirectory>
+							<outputDirectory>target/classes</outputDirectory>
 							<resources>
 								<resource>
-									<diretory>src/main/java</diretory>
+									<directory>src/main/env/local/</directory>
 									<filtering>true</filtering>
 									<includes>
 											<include>**/*.xml</include>
