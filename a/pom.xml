@@ -96,7 +96,12 @@
 	        </profile>
 		</profiles>
 		
-       <build>
+       <build>      			   	
+			<resources>
+				<resource>
+					<directory>src/main/resources/${env}</directory>
+				 </resource>
+			</resources>
               <plugins>
                      <plugin>
                            <groupId>org.springframework.boot</groupId>
@@ -126,11 +131,6 @@
                            </executions>
                      </plugin>
               </plugins>
-   	
-			<resources>
-				<resource>
-					<directory>src/main/resources/${env}</directory>
-				 </resource>
-			</resources>
+
        </build>
 </project>
