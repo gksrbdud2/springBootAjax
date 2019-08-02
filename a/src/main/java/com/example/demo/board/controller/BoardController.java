@@ -1,14 +1,12 @@
 package com.example.demo.board.controller;
  
-import javax.annotation.Resource;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.demo.AApplication;
 import com.example.demo.board.service.BoardService;
  
 @Controller
@@ -16,7 +14,7 @@ public class BoardController {
 
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	
-    @Resource(name="com.example.demo.board.service.BoardService")
+	@Autowired
     BoardService mBoardService;
     
     @RequestMapping("/list")

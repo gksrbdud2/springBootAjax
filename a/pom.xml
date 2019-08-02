@@ -79,29 +79,29 @@
                      <artifactId>jstl</artifactId>
                      <version>1.2</version>
               </dependency>
+           <!-- 
+			<dependency>
+		      <groupId>ch.qos.logback</groupId>
+		      <artifactId>logback-classic</artifactId>
+		      <version>1.0.13</version>
+		      <exclusions>
+		        <exclusion>
+		          <groupId>org.slf4j</groupId>
+		          <artifactId>slf4j-api</artifactId>
+		        </exclusion>
+		      </exclusions>
+		      <scope>runtime</scope>
+		    </dependency>
+		 
+		    <dependency>
+		      <groupId>org.codehaus.janino</groupId>
+		      <artifactId>janino</artifactId>
+		      <version>3.0.8</version>
+		    </dependency>
+		 -->               
        </dependencies>
-       
- 		<profiles>
-			<profile>
-	            <id>linux</id>
-	            <properties>
-	                <env>linux</env>
-	            </properties>
-			</profile>
-	        <profile>
-	            <id>window</id>
-	            <properties>
-	                <env>window</env>
-	            </properties>
-	        </profile>
-		</profiles>
-		
+
        <build>      			   	
-			<resources>
-				<resource>
-					<directory>src/main/resources/${env}</directory>
-				 </resource>
-			</resources>
               <plugins>
                      <plugin>
                            <groupId>org.springframework.boot</groupId>
@@ -128,9 +128,24 @@
                            			</resources>
                            		</configuration>
 							</execution>
-                           </executions>
+						</executions>
                      </plugin>
               </plugins>
-
+              <resources>
+				<resource>
+				    <directory>src/main/java</directory>
+				    <includes>
+				        <include>**/*.xml</include>
+				    </includes>
+				</resource>
+				<resource>
+				    <directory>src/main/resources</directory>
+				    <includes>
+				        <include>**/*.xml</include>
+				        <include>**/*.properties</include>
+				        <include>**/*.setting</include>
+				    </includes>
+				</resource>
+			</resources>
        </build>
 </project>
