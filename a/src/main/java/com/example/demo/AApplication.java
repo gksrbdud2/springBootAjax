@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 
-@MapperScan(value={"com.example.demo.board.mapper"})
+
 public class AApplication {
 	
 
