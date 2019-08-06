@@ -10,29 +10,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+
 @SpringBootApplication
-
-
 public class AApplication {
-	
 
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) {	
 		SpringApplication.run(AApplication.class, args);
-	
-		/*
-		Logger logger = LoggerFactory.getLogger(AApplication.class);
-	     
-	    logger.debug("debug");
-	    logger.info("info");
-	    logger.warn("warn");
-	    logger.error("error");
-	    */
-
 	}
-
-	/*
-     * SqlSessionFactory 설정
-     */
-   
+	
 }

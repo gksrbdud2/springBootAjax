@@ -16,10 +16,8 @@ public class BoardServiceImpl implements BoardService {
 	@Autowired
     BoardMapper mBoardMapper;
 
-
 	@Override
-	public List<BoardVO> boardListService() throws Exception {
-		
+	public List<BoardVO> boardListService() throws Exception {		
 		return mBoardMapper.boardList();
 	}
 

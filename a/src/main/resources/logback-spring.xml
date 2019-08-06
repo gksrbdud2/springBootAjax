@@ -1,59 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration>
+<configuration scan="true" scanPeriod="10 seconds">
  
-	<!-- Send debug messages to System.out -->
-	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-		<!-- By default, encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder -->
-		<encoder>
-			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n</pattern>
-		</encoder>
-	</appender>
-	
-	<!-- Send debug message to file -->
-	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-		<file>logs/spring-boot-logging.log</file>
-    	
-		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
-		</encoder>
-    	
-		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-			<fileNamePattern>logs/spring-boot-logging.%d{yyyy-MM-dd}_%i.log</fileNamePattern>
-			
-			<!-- each file should be at most 10MB, keep 30 days worth of history -->
-			<maxHistory>30</maxHistory>
-			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-				<maxFileSize>10MB</maxFileSize>
-			</timeBasedFileNamingAndTriggeringPolicy>
-		</rollingPolicy>
-	</appender>
+    <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
     
-	<!-- profile > prod -->
-	<springProfile name="prod">
-	    <logger name="com.test" level="info"/>
-	    <root level="info">
-	        <appender-ref ref="STDOUT"/>
-	        <appender-ref ref="FILE"/>
-	    </root>
-	</springProfile>
-	
-	<!-- profile > prod 제외 -->
-	<springProfile name="!prod">
-	    <logger name="com.test" level="debug"/>
-	</springProfile>
-	
-	<!-- profile > test -->
-	<springProfile name="test">
-	    <root level="debug">
-	        <appender-ref ref="STDOUT"/>
-	        <appender-ref ref="FILE"/>
-	    </root>
-	</springProfile>
-	
-	<!-- profile > local -->
-	<springProfile name="local">
-	    <root level="debug">
-	        <appender-ref ref="STDOUT"/>
-	    </root>
-	</springProfile>
+    <springProfile name="log-jdbc">
+        <logger name="jdbc" level="OFF"/>
+        <logger name="jdbc.sqlonly" level="OFF"/>
+        <logger name="jdbc.sqltiming" level="DEBUG"/>
+        <logger name="jdbc.audit" level="OFF"/>
+        <logger name="jdbc.resultset" level="OFF"/>
+        <logger name="jdbc.resultsettable" level="DEBUG"/>
+        <logger name="jdbc.connection" level="OFF"/>
+    </springProfile>
+    
+    <springProfile name="log-file">
+        <include resource="appenders/appender-file.xml" />
+          <root level="INFO">
+            <appender-ref ref="FILE" />
+          </root>
+    </springProfile>
+    
+    <springProfile name="log-console">
+        <include resource="appenders/appender-console.xml" />
+          <root level="INFO">
+              <appender-ref ref="CONSOLE" />
+          </root>
+    </springProfile>
 </configuration>
