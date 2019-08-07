@@ -110,28 +110,6 @@
                            <artifactId>spring-boot-maven-plugin</artifactId>
                      </plugin>                    
                    
-                     <plugin>
-                           <artifactId>maven-resources-plugin</artifactId>
-                           <executions>
-                           	<execution>
-                           		<id>my-resource-copy</id>
-                           		<phase>validate</phase>
-                           		<goals><goal>copy-resources</goal></goals>
-                           		<configuration>
-                           			<outputDirectory>target/classes</outputDirectory>
-                           			<resources>
-                           				<resource>
-                           					<directory>src/main/resources</directory>
-                           					<filtering>true</filtering>
-                           					<includes>
-                           						<include>**/*.xml</include>
-                           					</includes>
-                           				</resource>
-                           			</resources>
-                           		</configuration>
-							</execution>
-						</executions>
-                     </plugin>
                     
               </plugins>
               
