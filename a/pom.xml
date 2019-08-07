@@ -121,7 +121,7 @@
                            			<outputDirectory>target/classes</outputDirectory>
                            			<resources>
                            				<resource>
-                           					<directory>src/main/java</directory>
+                           					<directory>src/main/resources</directory>
                            					<filtering>true</filtering>
                            					<includes>
                            						<include>**/*.xml</include>
