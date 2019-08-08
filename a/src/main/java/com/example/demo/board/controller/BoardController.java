@@ -16,7 +16,7 @@ public class BoardController {
     @RequestMapping("/list")
     private String boardList(Model model) throws Exception{
         
-        model.addAttribute("list", mBoardService.boardListService());
+        //model.addAttribute("list", mBoardService.boardListService());
         
         return "list";
     }
