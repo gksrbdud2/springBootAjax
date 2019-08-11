@@ -6,6 +6,39 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.example.demo.board.mapper.BoardMapper">
     <select id="boardList" resultType="com.example.demo.board.domain.BoardVO">
-        select * from board;
+        SELECT
+            *
+        FROM BOARD
     </select>
+    
+    <select id="boardDetail" parameterType="int" resultType="com.example.demo.board.domain.BoardVO">
+        SELECT
+            *
+        FROM BOARD
+        WHERE
+            BNO = #{bno}
+    </select>
+    
+    <insert id="boardInsert" parameterType="com.example.demo.board.domain.BoardVO">
+        INSERT INTO
+        BOARD (BNO, SUBJECT,CONTENT,REG_DATE)
+        VALUES(#{bno},#{subject},#{content},now()) 
+    </insert>
+    
+    <update id="boardUpdate" parameterType="com.example.demo.board.domain.BoardVO">
+        UPDATE BOARD
+            SET
+        <if test="subject != null">
+            SUBJECT = #{subject}
+        </if>
+        <if test="subject != null and content != null"> , </if>
+        <if test="content != null">
+            CONTENT = #{content}
+        </if>
+        WHERE BNO = #{bno}
+    </update>
+    
+    <delete id="boardDelete" parameterType="int">
+        DELETE FROM BOARD WHERE BNO = #{bno}
+    </delete>
 </mapper>

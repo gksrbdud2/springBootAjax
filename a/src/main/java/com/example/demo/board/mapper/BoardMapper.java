@@ -9,7 +9,19 @@ import com.example.demo.board.domain.BoardVO;
 
 @Mapper
 public interface BoardMapper {
-    //Í≤åÏãúÍ∏Ä Î™©Î°ù  
+	 //∞‘Ω√±€ ∏Ò∑œ  
     public List<BoardVO> boardList() throws Exception;
+
+    //∞‘Ω√±€ ªÛºº
+    public BoardVO boardDetail(int bno) throws Exception;
+    
+    //∞‘Ω√±€ ¿€º∫  
+    public int boardInsert(BoardVO board) throws Exception;
+    
+    //∞‘Ω√±€ ºˆ¡§  
+    public int boardUpdate(BoardVO board) throws Exception;
+    
+    //∞‘Ω√±€ ªË¡¶  
+    public int boardDelete(int bno) throws Exception;
     
 }
