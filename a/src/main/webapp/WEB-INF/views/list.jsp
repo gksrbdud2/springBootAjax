@@ -11,8 +11,27 @@
         $(document).ready(function() {
               list();       
               FormatToUnixtime(unixtime);
+              create();
         });
-
+		
+        function create(){
+      	  $('#create').click(function() {
+                $.ajax({
+                    type: "POST",
+                    url: "/createBoard",
+                    data: {    "title" : $('#subject').val(),
+                       		   "text" : $('#content').val()},
+                    success: function() {
+                        alert('게시글 등록 성공');
+                        location.reload();
+                    }, error: function() {
+                        alert('게시글 등록 실패');
+                    }
+                });
+            });
+        }
+        
+   
       //유닉스 타임스템프를 년 월 일 시 분 초로 변경하기 위한 함수
         function FormatToUnixtime(unixtime) {
             var u = new Date(unixtime);
@@ -133,6 +152,7 @@
         })
        }
     </script>
+
 </head>
 <body> 
 
@@ -159,6 +179,25 @@
 		</div>
 		<button class="btn btn-primary" onclick="location.href='/insert'" style="float:right;">글쓰기</button>
 	</div>
+	
+	<button data-toggle="modal" data-target="#modal_create" class="btn btn-primary">CREATE</button>
+
+	<!-- create Modal -->
+	<div class="modal fade" id="modal_create" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-body">
+			  <input type="text" class="form-control" id="subject" placeholder="제목을 입력하세요" required />
+			  <input type="text" class="form-control" id="content" placeholder="내용을 입력하세요" required />
+	      </div>
+		  <div class="modal-footer">
+          	<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+         	<button type="button" id="create" name="create" class="btn btn-primary">등록완료</button>
+     	 </div>
+	    </div>
+	  </div>
+	</div>
+	
 	<%@ include file="bootstrap.jsp" %>     
 </body>
 </html>
