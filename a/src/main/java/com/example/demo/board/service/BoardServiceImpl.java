@@ -16,9 +16,28 @@ public class BoardServiceImpl implements BoardService {
 	@Autowired
     BoardMapper mBoardMapper;
 
-	@Override
 	public List<BoardVO> boardListService() throws Exception {		
 		return mBoardMapper.boardList();
 	}
+	
+	   public BoardVO boardDetailService(int bno) throws Exception{
+	        
+	        return mBoardMapper.boardDetail(bno);
+	    }
+	    
+	    public int boardInsertService(BoardVO board) throws Exception{
+	        
+	        return mBoardMapper.boardInsert(board);
+	    }
+	    
+	    public int boardUpdateService(BoardVO board) throws Exception{
+	        
+	        return mBoardMapper.boardUpdate(board);
+	    }
+	    
+	    public int boardDeleteService(int bno) throws Exception{
+	        
+	        return mBoardMapper.boardDelete(bno);
+	    }
 
 }

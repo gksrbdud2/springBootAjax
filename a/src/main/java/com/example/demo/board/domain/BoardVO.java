@@ -3,16 +3,12 @@ package com.example.demo.board.domain;
 import java.util.Date;
 
 public class BoardVO {
-	private int id;
-    private String subject;
-    private String content;
-    private Date reg_date;
-	 
-    public int getId() {
-		return id;
+
+	public int getBno() {
+		return bno;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setBno(int bno) {
+		this.bno = bno;
 	}
 	public String getSubject() {
 		return subject;
@@ -32,6 +28,9 @@ public class BoardVO {
 	public void setReg_date(Date reg_date) {
 		this.reg_date = reg_date;
 	}
+	private int bno;
+    private String subject;
+    private String content;
+    private Date   reg_date;
 
- 
 }
