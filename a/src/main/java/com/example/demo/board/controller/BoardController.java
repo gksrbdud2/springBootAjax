@@ -17,6 +17,7 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.entity.mime.content.FileBody;
+import org.apache.http.entity.mime.content.InputStreamBody;
 import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -27,7 +28,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.example.demo.board.domain.BoardVO;
 import com.example.demo.board.domain.FileVO;
@@ -118,16 +121,16 @@ public class BoardController {
         return "multipartForm";
     }
   
-    //Http Client 호출 Multipart
+  //파일첨부 MultipartFile Submit
     @RequestMapping(value="/multipartSubmit")
     public void multipartSubmit(HttpServletRequest request,  FileVO vo) {
-    		CloseableHttpClient httpclient = HttpClients.createDefault();
+        CloseableHttpClient httpclient = HttpClients.createDefault();
             try {
-            	
-                HttpPost httppost = new HttpPost("/multipartServer");
+                HttpPost httppost = new HttpPost("http://localhost:8080/multipartServer");
                 File convFile = new File(vo.getFileupload().getOriginalFilename());
                 vo.getFileupload().transferTo(convFile);
-                FileBody multipart = new FileBody(convFile);
+                InputStreamBody multipart = new InputStreamBody(vo.getFileupload().getInputStream(), vo.getFileupload().getOriginalFilename());
+                
                 //Charset.forName("UTF-8") : 한글깨짐 방지를위함
                 StringBody txt = new StringBody(request.getParameter("txt"), Charset.forName("UTF-8"));
                 //API 서버에 전달하고자하는 PARAMETER
@@ -142,7 +145,6 @@ public class BoardController {
                     if (resEntity != null) {
                         System.out.println("Response content length: " + resEntity.getContentLength());
                     }
-                    EntityUtils.consume(resEntity);
                 } finally {
                     response.close();
                 }
@@ -153,6 +155,6 @@ public class BoardController {
             httpclient.close();
             } catch (IOException e) {}
             }
+    }
 
-    	}
 }

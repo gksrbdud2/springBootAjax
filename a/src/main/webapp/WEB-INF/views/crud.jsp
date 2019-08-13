@@ -124,8 +124,8 @@
 		        	a += '<td>' + data[str]['subject'] + '</td>';
 					a += '<td>' + data[str]['content'] + '</td>';
 					a += '<td>' + FormatToUnixtime(data[str]['reg_date']) + '</td>';
-					a += '<td><button class="btn btn-default" onclick="boardDelete(' + data[str]['bno'] + ');"> 삭제 </button></td></tr>';	
-					
+					a += '<td><button class="btn btn-info" onclick="boardDetail(' + data[str]['bno'] + ',\'' + data[str]['subject'] + ',\'' + data[str]['content'] + '\');" data-toggle="modal" data-target="#modal_edit"> EDIT </button></td>';
+					a += '<td><button class="btn btn-danger" onclick="boardDelete(' + data[str]['bno'] + ');"> DELETE </button></td></tr>';	
 				  }
 
 				$("#tbody").html(a);
@@ -155,27 +155,27 @@
             });
         }
          
-        //게시글 수정 - 게시글 내용 출력을 input 폼으로 변경 
-        function boardUpdate(bno, subject, content){
+        //게시글 상세보기 - 게시글 상세보기(수정 폼) 
+        function boardDetail(bno, subject, content){
             var a ='';
+            var b ='';
+            a += '<input type="text" class="form-control" name="subject_' + bno + '" value="' + subject + '"/>';
+            a += '<input type="text" class="form-control" name="content_' + bno + '" value="' + content + '"/>';
+            b += '<button class="btn btn-default" type="button" onclick="boardUpdateProc(' + bno + ');">수정</button>';
+
             
-            a += '<div class="input-group">';
-            a += '<input type="text" class="form-control" name="content_'+bno+'" value="'+content+'"/>';
-            a += '<span class="input-group-btn"><button class="btn btn-danger" type="button" onclick="boardUpdateProc('+bno+');">수정</button> </span>';
-            a += '</div>';
-            
-            $('.boardContent'+bno).html(a);
-            
+            $('#pp').html(a);
+            $('#kk').html(b);
         }
          
         //게시글 수정
-        function boardUpdateProc(bno){
+        function boardUpdateProc(bno, subject, content){
             var updateContent = $('[name=content_'+bno+']').val();
             
             $.ajax({
                 url : '/updateProc',
                 type : 'post',
-                data : {'content' : updateContent, 'bno' : bno},
+                data : {'subject' : updateSubject, 'content' : updateContent, 'bno' : bno},
                 success : function(data){
                     if(data == 1) boardList(); //댓글 수정후 목록 출력 
                 }
