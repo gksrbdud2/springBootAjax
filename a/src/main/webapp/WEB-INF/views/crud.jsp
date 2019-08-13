@@ -25,7 +25,7 @@
 		
 		
 		
-		var dataPerPage = 5;    // 한 페이지에 나타낼 데이터 수
+		var dataPerPage = 5;    // 한 페이지에 나타낼 데이터 수..
 		var pageCount = 5;  // 한 화면에 나타낼 페이지버튼 수
 		var currentPage = 1;
 		var table = '#mytable'
