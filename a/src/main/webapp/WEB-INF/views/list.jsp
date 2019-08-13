@@ -6,10 +6,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Listaaaa</title>
 	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-	<link rel="/test.css">
 </head>
 <body> 
-
 	<div class="container">
 		<h2> 게시글 목록 </h2>		
 		<table class="table table-hover" id="mytable">
@@ -31,10 +29,8 @@
 	            </div>
 	        </nav>
 		</div>
-		
-
 	</div>
-
+	
 		<!--  ajax 등록,수정  -->
 	    <div class="container">
 	        <label for="content">글쓰기</label>

@@ -120,10 +120,12 @@
           		  var a =''; 
           		  
 				  for (var str in data) {
-		          	a += '<tr><td>' + data[str]['subject'] + '</td>';
+		          	a += '<tr><td>' + data[str]['bno'] + '</td>';
+		        	a += '<td>' + data[str]['subject'] + '</td>';
 					a += '<td>' + data[str]['content'] + '</td>';
 					a += '<td>' + FormatToUnixtime(data[str]['reg_date']) + '</td>';
-					a += '<td><a onclick="boardDelete(' + data[str]['bno'] + ');"> 삭제 </a></td></tr>';	
+					a += '<td><button class="btn btn-default" onclick="boardDelete(' + data[str]['bno'] + ');"> 삭제 </button></td></tr>';	
+					
 				  }
 
 				$("#tbody").html(a);
@@ -159,7 +161,7 @@
             
             a += '<div class="input-group">';
             a += '<input type="text" class="form-control" name="content_'+bno+'" value="'+content+'"/>';
-            a += '<span class="input-group-btn"><button class="btn btn-default" type="button" onclick="boardUpdateProc('+bno+');">수정</button> </span>';
+            a += '<span class="input-group-btn"><button class="btn btn-danger" type="button" onclick="boardUpdateProc('+bno+');">수정</button> </span>';
             a += '</div>';
             
             $('.boardContent'+bno).html(a);

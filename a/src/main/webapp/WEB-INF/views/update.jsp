@@ -9,8 +9,6 @@
 </head>
 <body>
  
-
- 
 <div class="container">
 	<h2> 게시글 수정 </h2>
     <form action="/updateProc" method="post">
@@ -30,4 +28,6 @@
  
 <%@ include file="bootstrap.jsp" %>
 </body>
+
 </html>
+

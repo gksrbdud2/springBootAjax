@@ -274,3 +274,599 @@ Consider the following:
 	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
 	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles log-console,log-jdbc,log-file are currently active).
 
+2019-08-10 12:14:01.013 [main] INFO  com.example.demo.AApplication - Starting AApplication on DESKTOP-C2T1V5J with PID 13732 (C:\Users\gksrb\git\please\a\target\classes started by gksrb in C:\Users\gksrb\git\please\a)
+2019-08-10 12:14:01.019 [main] INFO  com.example.demo.AApplication - The following profiles are active: log-jdbc,log-file,log-console
+2019-08-10 12:14:02.727 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-10 12:14:02.748 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-08-10 12:14:02.761 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-10 12:14:02.761 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-10 12:14:03.088 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2019-08-10 12:14:03.095 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-10 12:14:03.096 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2004 ms
+2019-08-10 12:14:03.199 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardController': Unsatisfied dependency expressed through field 'mBoardService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardServiceImpl': Unsatisfied dependency expressed through field 'mBoardMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardMapper' defined in file [C:\Users\gksrb\git\please\a\target\classes\com\example\demo\board\mapper\BoardMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/example/demo/board/config/BoardConfig.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2019-08-10 12:14:03.204 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2019-08-10 12:14:03.273 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-10 12:14:03.294 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles log-jdbc,log-file,log-console are currently active).
+
+2019-08-10 12:21:27.456 [main] INFO  com.example.demo.AApplication - Starting AApplication on DESKTOP-C2T1V5J with PID 3504 (C:\Users\gksrb\git\please\a\target\classes started by gksrb in C:\Users\gksrb\git\please\a)
+2019-08-10 12:21:27.460 [main] INFO  com.example.demo.AApplication - The following profiles are active: log-jdbc,log-file,log-console
+2019-08-10 12:21:29.230 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-10 12:21:29.251 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-08-10 12:21:29.265 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-10 12:21:29.265 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-10 12:21:29.593 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2019-08-10 12:21:29.600 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-10 12:21:29.601 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2050 ms
+2019-08-10 12:21:29.702 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardController': Unsatisfied dependency expressed through field 'mBoardService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardServiceImpl': Unsatisfied dependency expressed through field 'mBoardMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardMapper' defined in file [C:\Users\gksrb\git\please\a\target\classes\com\example\demo\board\mapper\BoardMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/example/demo/board/config/BoardConfig.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2019-08-10 12:21:29.707 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2019-08-10 12:21:29.771 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-10 12:21:29.782 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles log-jdbc,log-file,log-console are currently active).
+
+2019-08-10 12:22:33.480 [main] INFO  com.example.demo.AApplication - Starting AApplication on DESKTOP-C2T1V5J with PID 15068 (C:\Users\gksrb\git\please\a\target\classes started by gksrb in C:\Users\gksrb\git\please\a)
+2019-08-10 12:22:33.485 [main] INFO  com.example.demo.AApplication - The following profiles are active: log-jdbc,log-file,log-console
+2019-08-10 12:22:35.098 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-10 12:22:35.128 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-08-10 12:22:35.144 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-10 12:22:35.144 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-10 12:22:35.469 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2019-08-10 12:22:35.476 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-10 12:22:35.477 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1923 ms
+2019-08-10 12:22:35.578 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardController': Unsatisfied dependency expressed through field 'mBoardService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardServiceImpl': Unsatisfied dependency expressed through field 'mBoardMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardMapper' defined in file [C:\Users\gksrb\git\please\a\target\classes\com\example\demo\board\mapper\BoardMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/example/demo/board/config/BoardConfig.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2019-08-10 12:22:35.584 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2019-08-10 12:22:35.650 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-10 12:22:35.664 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles log-jdbc,log-file,log-console are currently active).
+
+2019-08-10 12:27:09.852 [main] INFO  com.example.demo.AApplication - Starting AApplication on DESKTOP-C2T1V5J with PID 8532 (C:\Users\gksrb\git\please\a\target\classes started by gksrb in C:\Users\gksrb\git\please\a)
+2019-08-10 12:27:09.857 [main] INFO  com.example.demo.AApplication - The following profiles are active: log-jdbc,log-file,log-console
+2019-08-10 12:27:11.568 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-10 12:27:11.589 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-08-10 12:27:11.602 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-10 12:27:11.602 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-10 12:27:11.936 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2019-08-10 12:27:11.945 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-10 12:27:11.946 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2015 ms
+2019-08-10 12:27:12.050 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardController': Unsatisfied dependency expressed through field 'mBoardService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardServiceImpl': Unsatisfied dependency expressed through field 'mBoardMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardMapper' defined in file [C:\Users\gksrb\git\please\a\target\classes\com\example\demo\board\mapper\BoardMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/example/demo/board/config/BoardConfig.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2019-08-10 12:27:12.055 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2019-08-10 12:27:12.132 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-10 12:27:12.151 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles log-jdbc,log-file,log-console are currently active).
+
+2019-08-10 12:28:29.689 [main] INFO  com.example.demo.AApplication - Starting AApplication on DESKTOP-C2T1V5J with PID 16288 (C:\Users\gksrb\git\please\a\target\classes started by gksrb in C:\Users\gksrb\git\please\a)
+2019-08-10 12:28:29.694 [main] INFO  com.example.demo.AApplication - The following profiles are active: log-jdbc,log-file,log-console
+2019-08-10 12:28:31.687 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-10 12:28:31.714 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-08-10 12:28:31.733 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-10 12:28:31.735 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-10 12:28:32.071 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2019-08-10 12:28:32.079 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-10 12:28:32.080 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2314 ms
+2019-08-10 12:28:32.180 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardController': Unsatisfied dependency expressed through field 'mBoardService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardServiceImpl': Unsatisfied dependency expressed through field 'mBoardMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardMapper' defined in file [C:\Users\gksrb\git\please\a\target\classes\com\example\demo\board\mapper\BoardMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/example/demo/board/config/BoardConfig.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2019-08-10 12:28:32.186 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2019-08-10 12:28:32.265 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-10 12:28:32.279 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles log-jdbc,log-file,log-console are currently active).
+
+2019-08-10 12:28:57.268 [main] INFO  com.example.demo.AApplication - Starting AApplication on DESKTOP-C2T1V5J with PID 9864 (C:\Users\gksrb\git\please\a\target\classes started by gksrb in C:\Users\gksrb\git\please\a)
+2019-08-10 12:28:57.272 [main] INFO  com.example.demo.AApplication - The following profiles are active: log-jdbc,log-file,log-console
+2019-08-10 12:28:59.110 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-10 12:28:59.132 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-08-10 12:28:59.144 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-10 12:28:59.145 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-10 12:28:59.487 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2019-08-10 12:28:59.497 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-10 12:28:59.498 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2152 ms
+2019-08-10 12:28:59.616 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardController': Unsatisfied dependency expressed through field 'mBoardService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardServiceImpl': Unsatisfied dependency expressed through field 'mBoardMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardMapper' defined in file [C:\Users\gksrb\git\please\a\target\classes\com\example\demo\board\mapper\BoardMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/example/demo/board/config/BoardConfig.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2019-08-10 12:28:59.622 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2019-08-10 12:28:59.686 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-10 12:28:59.703 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles log-jdbc,log-file,log-console are currently active).
+
+2019-08-10 12:30:37.343 [main] INFO  com.example.demo.AApplication - Starting AApplication on DESKTOP-C2T1V5J with PID 12992 (C:\Users\gksrb\git\please\a\target\classes started by gksrb in C:\Users\gksrb\git\please\a)
+2019-08-10 12:30:37.347 [main] INFO  com.example.demo.AApplication - The following profiles are active: log-jdbc,log-file,log-console
+2019-08-10 12:30:38.987 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-10 12:30:39.008 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-08-10 12:30:39.020 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-10 12:30:39.020 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-10 12:30:39.339 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2019-08-10 12:30:39.346 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-10 12:30:39.347 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1929 ms
+2019-08-10 12:30:39.447 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardController': Unsatisfied dependency expressed through field 'mBoardService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardServiceImpl': Unsatisfied dependency expressed through field 'mBoardMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardMapper' defined in file [C:\Users\gksrb\git\please\a\target\classes\com\example\demo\board\mapper\BoardMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/example/demo/board/config/BoardConfig.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2019-08-10 12:30:39.454 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2019-08-10 12:30:39.524 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-10 12:30:39.536 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles log-jdbc,log-file,log-console are currently active).
+
+2019-08-13 12:00:35.101 [main] INFO  com.example.demo.AApplication - Starting AApplication on DESKTOP-DA91TTR with PID 992 (C:\Users\gksrb\git\test3\a\target\classes started by gksrb in C:\Users\gksrb\git\test3\a)
+2019-08-13 12:00:35.103 [main] INFO  com.example.demo.AApplication - The following profiles are active: log-console,log-jdbc,log-file
+2019-08-13 12:00:36.248 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-13 12:00:36.265 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-08-13 12:00:36.284 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-13 12:00:36.285 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-13 12:00:36.596 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2019-08-13 12:00:36.610 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-13 12:00:36.612 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1472 ms
+2019-08-13 12:00:36.716 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardController': Unsatisfied dependency expressed through field 'mBoardService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardServiceImpl': Unsatisfied dependency expressed through field 'mBoardMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardMapper' defined in file [C:\Users\gksrb\git\test3\a\target\classes\com\example\demo\board\mapper\BoardMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/example/demo/board/config/BoardConfig.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2019-08-13 12:00:36.723 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2019-08-13 12:00:36.751 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-13 12:00:36.759 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles log-console,log-jdbc,log-file are currently active).
+
+2019-08-13 12:03:48.099 [main] INFO  com.example.demo.AApplication - Starting AApplication on DESKTOP-DA91TTR with PID 3792 (C:\Users\gksrb\git\test3\a\target\classes started by gksrb in C:\Users\gksrb\git\test3\a)
+2019-08-13 12:03:48.102 [main] INFO  com.example.demo.AApplication - The following profiles are active: log-console,log-jdbc,log-file
+2019-08-13 12:03:49.078 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-13 12:03:49.093 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-08-13 12:03:49.103 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-13 12:03:49.103 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-13 12:03:49.318 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2019-08-13 12:03:49.331 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-13 12:03:49.332 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1187 ms
+2019-08-13 12:03:49.424 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardController': Unsatisfied dependency expressed through field 'mBoardService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardServiceImpl': Unsatisfied dependency expressed through field 'mBoardMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardMapper' defined in file [C:\Users\gksrb\git\test3\a\target\classes\com\example\demo\board\mapper\BoardMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/example/demo/board/config/BoardConfig.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2019-08-13 12:03:49.427 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2019-08-13 12:03:49.447 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-13 12:03:49.454 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles log-console,log-jdbc,log-file are currently active).
+
+2019-08-13 12:05:13.153 [main] INFO  com.example.demo.AApplication - Starting AApplication on DESKTOP-DA91TTR with PID 10320 (C:\Users\gksrb\git\test3\a\target\classes started by gksrb in C:\Users\gksrb\git\test3\a)
+2019-08-13 12:05:13.156 [main] INFO  com.example.demo.AApplication - The following profiles are active: log-console,log-jdbc,log-file
+2019-08-13 12:05:14.076 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-13 12:05:14.090 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-08-13 12:05:14.104 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-13 12:05:14.105 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-13 12:05:14.303 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2019-08-13 12:05:14.317 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-13 12:05:14.318 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1115 ms
+2019-08-13 12:05:14.409 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardController': Unsatisfied dependency expressed through field 'mBoardService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardServiceImpl': Unsatisfied dependency expressed through field 'mBoardMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardMapper' defined in file [C:\Users\gksrb\git\test3\a\target\classes\com\example\demo\board\mapper\BoardMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/example/demo/board/config/BoardConfig.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2019-08-13 12:05:14.412 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2019-08-13 12:05:14.433 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-13 12:05:14.441 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles log-console,log-jdbc,log-file are currently active).
+
+2019-08-13 12:05:42.558 [main] INFO  com.example.demo.AApplication - Starting AApplication on DESKTOP-DA91TTR with PID 12752 (C:\Users\gksrb\git\test3\a\target\classes started by gksrb in C:\Users\gksrb\git\test3\a)
+2019-08-13 12:05:42.561 [main] INFO  com.example.demo.AApplication - The following profiles are active: log-console,log-jdbc,log-file
+2019-08-13 12:05:43.500 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-13 12:05:43.516 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-08-13 12:05:43.527 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-13 12:05:43.528 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-13 12:05:43.734 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2019-08-13 12:05:43.747 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-13 12:05:43.748 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1147 ms
+2019-08-13 12:05:43.848 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardController': Unsatisfied dependency expressed through field 'mBoardService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardServiceImpl': Unsatisfied dependency expressed through field 'mBoardMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardMapper' defined in file [C:\Users\gksrb\git\test3\a\target\classes\com\example\demo\board\mapper\BoardMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/example/demo/board/config/BoardConfig.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2019-08-13 12:05:43.851 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2019-08-13 12:05:43.872 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-13 12:05:43.877 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles log-console,log-jdbc,log-file are currently active).
+
+2019-08-13 12:06:50.108 [main] INFO  com.example.demo.AApplication - Starting AApplication on DESKTOP-DA91TTR with PID 13732 (C:\Users\gksrb\git\test3\a\target\classes started by gksrb in C:\Users\gksrb\git\test3\a)
+2019-08-13 12:06:50.111 [main] INFO  com.example.demo.AApplication - The following profiles are active: log-console,log-jdbc,log-file
+2019-08-13 12:06:51.034 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-13 12:06:51.049 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-08-13 12:06:51.060 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-13 12:06:51.060 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-13 12:06:51.283 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2019-08-13 12:06:51.296 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-13 12:06:51.297 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1148 ms
+2019-08-13 12:06:51.382 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardController': Unsatisfied dependency expressed through field 'mBoardService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardServiceImpl': Unsatisfied dependency expressed through field 'mBoardMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardMapper' defined in file [C:\Users\gksrb\git\test3\a\target\classes\com\example\demo\board\mapper\BoardMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/example/demo/board/config/BoardConfig.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2019-08-13 12:06:51.385 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2019-08-13 12:06:51.409 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-13 12:06:51.414 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles log-console,log-jdbc,log-file are currently active).
+
+2019-08-13 12:07:52.727 [main] INFO  com.example.demo.AApplication - Starting AApplication on DESKTOP-DA91TTR with PID 23492 (C:\Users\gksrb\git\test3\a\target\classes started by gksrb in C:\Users\gksrb\git\test3\a)
+2019-08-13 12:07:52.729 [main] INFO  com.example.demo.AApplication - The following profiles are active: log-console,log-jdbc,log-file
+2019-08-13 12:07:53.689 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-13 12:07:53.704 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-08-13 12:07:53.715 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-13 12:07:53.716 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-13 12:07:53.900 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2019-08-13 12:07:53.913 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-13 12:07:53.914 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1142 ms
+2019-08-13 12:07:54.004 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardController': Unsatisfied dependency expressed through field 'mBoardService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardServiceImpl': Unsatisfied dependency expressed through field 'mBoardMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardMapper' defined in file [C:\Users\gksrb\git\test3\a\target\classes\com\example\demo\board\mapper\BoardMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/example/demo/board/config/BoardConfig.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2019-08-13 12:07:54.007 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2019-08-13 12:07:54.028 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-13 12:07:54.035 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles log-console,log-jdbc,log-file are currently active).
+
+2019-08-13 12:14:10.941 [main] INFO  com.example.demo.AApplication - Starting AApplication on DESKTOP-DA91TTR with PID 14856 (C:\Users\gksrb\git\test3\a\target\classes started by gksrb in C:\Users\gksrb\git\test3\a)
+2019-08-13 12:14:10.944 [main] INFO  com.example.demo.AApplication - The following profiles are active: log-console,log-jdbc,log-file
+2019-08-13 12:14:11.885 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-13 12:14:11.899 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-08-13 12:14:11.911 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-13 12:14:11.911 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-13 12:14:12.109 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2019-08-13 12:14:12.124 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-13 12:14:12.124 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1138 ms
+2019-08-13 12:14:12.218 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardController': Unsatisfied dependency expressed through field 'mBoardService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardServiceImpl': Unsatisfied dependency expressed through field 'mBoardMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardMapper' defined in file [C:\Users\gksrb\git\test3\a\target\classes\com\example\demo\board\mapper\BoardMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/example/demo/board/config/BoardConfig.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2019-08-13 12:14:12.221 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2019-08-13 12:14:12.245 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-13 12:14:12.251 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles log-console,log-jdbc,log-file are currently active).
+
+2019-08-13 12:14:30.363 [main] INFO  com.example.demo.AApplication - Starting AApplication on DESKTOP-DA91TTR with PID 19696 (C:\Users\gksrb\git\test3\a\target\classes started by gksrb in C:\Users\gksrb\git\test3\a)
+2019-08-13 12:14:30.374 [main] INFO  com.example.demo.AApplication - The following profiles are active: log-console,log-jdbc,log-file
+2019-08-13 12:14:31.712 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-13 12:14:31.732 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-08-13 12:14:31.748 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-13 12:14:31.748 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-13 12:14:32.001 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2019-08-13 12:14:32.014 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-13 12:14:32.015 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1569 ms
+2019-08-13 12:14:32.110 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardController': Unsatisfied dependency expressed through field 'mBoardService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardServiceImpl': Unsatisfied dependency expressed through field 'mBoardMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardMapper' defined in file [C:\Users\gksrb\git\test3\a\target\classes\com\example\demo\board\mapper\BoardMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/example/demo/board/config/BoardConfig.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2019-08-13 12:14:32.114 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2019-08-13 12:14:32.136 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-13 12:14:32.143 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles log-console,log-jdbc,log-file are currently active).
+
+2019-08-13 12:14:59.250 [main] INFO  com.example.demo.AApplication - Starting AApplication on DESKTOP-DA91TTR with PID 19028 (C:\Users\gksrb\git\test3\a\target\classes started by gksrb in C:\Users\gksrb\git\test3\a)
+2019-08-13 12:14:59.252 [main] INFO  com.example.demo.AApplication - The following profiles are active: log-console,log-jdbc,log-file
+2019-08-13 12:15:04.380 [main] INFO  com.example.demo.AApplication - Starting AApplication on DESKTOP-DA91TTR with PID 14800 (C:\Users\gksrb\git\test3\a\target\classes started by gksrb in C:\Users\gksrb\git\test3\a)
+2019-08-13 12:15:04.383 [main] INFO  com.example.demo.AApplication - The following profiles are active: log-console,log-jdbc,log-file
+2019-08-13 12:15:05.291 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-13 12:15:05.306 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-08-13 12:15:05.318 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-13 12:15:05.318 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-13 12:15:05.504 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2019-08-13 12:15:05.516 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-13 12:15:05.517 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1096 ms
+2019-08-13 12:15:05.608 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardController': Unsatisfied dependency expressed through field 'mBoardService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardServiceImpl': Unsatisfied dependency expressed through field 'mBoardMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardMapper' defined in file [C:\Users\gksrb\git\test3\a\target\classes\com\example\demo\board\mapper\BoardMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/example/demo/board/config/BoardConfig.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2019-08-13 12:15:05.611 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2019-08-13 12:15:05.631 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-13 12:15:05.638 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles log-console,log-jdbc,log-file are currently active).
+
+2019-08-13 13:18:19.711 [main] INFO  com.example.demo.AApplication - Starting AApplication on DESKTOP-DA91TTR with PID 11828 (C:\Users\gksrb\git\test3\a\target\classes started by gksrb in C:\Users\gksrb\git\test3\a)
+2019-08-13 13:18:19.715 [main] INFO  com.example.demo.AApplication - The following profiles are active: log-console,log-jdbc,log-file
+2019-08-13 13:18:20.781 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-13 13:18:20.796 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-08-13 13:18:20.806 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-13 13:18:20.806 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-13 13:18:20.994 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2019-08-13 13:18:21.008 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-13 13:18:21.009 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1252 ms
+2019-08-13 13:18:21.093 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardController': Unsatisfied dependency expressed through field 'mBoardService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardServiceImpl': Unsatisfied dependency expressed through field 'mBoardMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardMapper' defined in file [C:\Users\gksrb\git\test3\a\target\classes\com\example\demo\board\mapper\BoardMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/example/demo/board/config/BoardConfig.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2019-08-13 13:18:21.096 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2019-08-13 13:18:21.126 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-13 13:18:21.131 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles log-console,log-jdbc,log-file are currently active).
+
+2019-08-13 13:20:29.943 [main] INFO  com.example.demo.AApplication - Starting AApplication on DESKTOP-DA91TTR with PID 21440 (C:\Users\gksrb\git\test3\a\target\classes started by gksrb in C:\Users\gksrb\git\test3\a)
+2019-08-13 13:20:29.946 [main] INFO  com.example.demo.AApplication - The following profiles are active: log-console,log-jdbc,log-file
+2019-08-13 13:20:30.874 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-08-13 13:20:30.888 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2019-08-13 13:20:30.900 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-08-13 13:20:30.900 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.21]
+2019-08-13 13:20:31.108 [main] INFO  org.apache.jasper.servlet.TldScanner - At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2019-08-13 13:20:31.120 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-08-13 13:20:31.121 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1138 ms
+2019-08-13 13:20:31.236 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardController': Unsatisfied dependency expressed through field 'mBoardService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardServiceImpl': Unsatisfied dependency expressed through field 'mBoardMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'boardMapper' defined in file [C:\Users\gksrb\git\test3\a\target\classes\com\example\demo\board\mapper\BoardMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/example/demo/board/config/BoardConfig.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2019-08-13 13:20:31.240 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2019-08-13 13:20:31.274 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-08-13 13:20:31.282 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles log-console,log-jdbc,log-file are currently active).
+

@@ -1,6 +1,10 @@
 package com.example.demo.board.controller;
  
 
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -8,13 +12,21 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.http.HttpEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.mime.MultipartEntityBuilder;
+import org.apache.http.entity.mime.content.FileBody;
+import org.apache.http.entity.mime.content.StringBody;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.board.domain.BoardVO;
@@ -42,6 +54,7 @@ public class BoardController {
        
     }
     
+
     @RequestMapping("/insert") //게시글 작성폼 호출  
     @ResponseBody
     private int boardInsert(HttpServletRequest request) throws Exception{
@@ -61,7 +74,7 @@ public class BoardController {
         
         return "detail";
     }
-    
+
 
     @RequestMapping("/updateProc")
     @ResponseBody
@@ -82,9 +95,8 @@ public class BoardController {
         return mBoardService.boardDeleteService(bno);
     }
   
-    
-    
-  //MultipartFile 방식
+
+   //MultipartFile 방식
     @RequestMapping(value="/multipartServer", method=RequestMethod.POST)
     public @ResponseBody Map<String, Object> multipartServer(FileVO vo,HttpServletRequest request) {
         System.out.println("Multipart Server Response");
@@ -99,17 +111,18 @@ public class BoardController {
         return map;
     }
     
-  //Multipart방식 호출을 위한 샘플폼화면
+    
+   //Multipart방식 호출을 위한 샘플폼화면 (사용자 페이지)
     @RequestMapping(value="/multipartForm")
     public String multipartForm(HttpServletRequest request, HttpServletResponse response) {
         return "multipartForm";
     }
-   /* 
+  
+    //Http Client 호출 Multipart
     @RequestMapping(value="/multipartSubmit")
     public void multipartSubmit(HttpServletRequest request,  FileVO vo) {
-        CloseableHttpClient httpclient = HttpClients.createDefault();
+    		CloseableHttpClient httpclient = HttpClients.createDefault();
             try {
-            	
             	
                 HttpPost httppost = new HttpPost("/multipartServer");
                 File convFile = new File(vo.getFileupload().getOriginalFilename());
@@ -124,7 +137,7 @@ public class BoardController {
                 try {
                     System.out.println(response.getStatusLine());
                     //API서버로부터 받은 JSON 문자열 데이터
-            System.out.println(EntityUtils.toString(response.getEntity()));
+                    System.out.println(EntityUtils.toString(response.getEntity()));
                     HttpEntity resEntity = response.getEntity();
                     if (resEntity != null) {
                         System.out.println("Response content length: " + resEntity.getContentLength());
@@ -142,6 +155,4 @@ public class BoardController {
             }
 
     	}
- */  
- 
 }
