@@ -7,7 +7,7 @@
 	<title>Listaaaa</title>
 	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 	<style>
-		table th {text-align:center;}
+		table th, table td {text-align:center;}
 	</style>
 </head>
 <body> 
@@ -48,7 +48,7 @@
 		      </div>
 			  <div class="modal-footer">
 	          	<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-	         	<input type="submit" name="boardInsertBtn" class="btn btn-primary" value="등록완료">
+	         	<input type="button" name="boardInsertBtn" class="btn btn-primary" value="등록완료">
 	     	 </div>
 		    </div>
 		  </div>

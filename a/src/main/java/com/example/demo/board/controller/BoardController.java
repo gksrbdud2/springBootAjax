@@ -12,6 +12,8 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -29,6 +31,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -41,12 +44,58 @@ public class BoardController {
 	
 	@Autowired
     BoardService mBoardService;
-    
+	
+	@RequestMapping("/insertPage") //게시글 작성폼 호출  
+    private String boardInsertForm(){
+        
+        return "insert";
+    }
+	
+	/*
+	@RequestMapping("/insertProc")
+    private String boardInsertProc(HttpServletRequest request, @RequestPart MultipartFile files) throws Exception{
+        
+        BoardVO board = new BoardVO();
+        FileVO  file  = new FileVO();
+        
+        board.setSubject(request.getParameter("subject"));
+        board.setContent(request.getParameter("content"));
+        
+        if(files.isEmpty()){ //업로드할 파일이 없을 시
+            mBoardService.boardInsertService(board); //게시글 insert
+        }else{
+            String fileName = files.getOriginalFilename(); 
+            String fileNameExtension = FilenameUtils.getExtension(fileName).toLowerCase(); 
+            File destinationFile; 
+            String destinationFileName; 
+            String fileUrl = "C:\\Users\\gksrb\\git\\test3\\a\\src\\main\\webapp\\WEB-INF\\uploadFiles\\";
+            
+            do { 
+                destinationFileName = RandomStringUtils.randomAlphanumeric(32) + "." + fileNameExtension; 
+                destinationFile = new File(fileUrl+ destinationFileName); 
+            } while (destinationFile.exists()); 
+            
+            destinationFile.getParentFile().mkdirs(); 
+            files.transferTo(destinationFile); 
+            
+            mBoardService.boardInsertService(board); //게시글 insert
+            
+            file.setBno(board.getBno());
+            file.setFileName(destinationFileName);
+             file.setFileOriName(fileName);
+            file.setFileUrl(fileUrl);
+            
+            mBoardService.fileInsertService(file); //file insert
+        }
+        
+        
+        return "redirect:/list";
+    }
+
+    */
     @RequestMapping("/list")
-    private String boardList(Model model) throws Exception{
-        
+    private String boardList(Model model) throws Exception{       
         //model.addAttribute("list", mBoardService.boardListService());
-        
         return "list";
     }
     
@@ -54,19 +103,18 @@ public class BoardController {
     @RequestMapping(value = "/get_list", method = RequestMethod.GET)
     public List<BoardVO> get_board() throws Exception {
 		return mBoardService.boardListService();
-       
     }
     
 
     @RequestMapping("/insert") //게시글 작성폼 호출  
     @ResponseBody
     private int boardInsert(HttpServletRequest request) throws Exception{
-        
+    	
         BoardVO board = new BoardVO();
         
         board.setSubject(request.getParameter("subject"));
         board.setContent(request.getParameter("content"));
-        
+      
         return mBoardService.boardInsertService(board);
     }
     
@@ -127,11 +175,12 @@ public class BoardController {
         CloseableHttpClient httpclient = HttpClients.createDefault();
             try {
                 HttpPost httppost = new HttpPost("http://localhost:8080/multipartServer");
-                File convFile = new File(vo.getFileupload().getOriginalFilename());
+                String fileSavePath = "C:/dev/";
+                File convFile = new File(fileSavePath + vo.getFileupload().getOriginalFilename());
                 vo.getFileupload().transferTo(convFile);
-                InputStreamBody multipart = new InputStreamBody(vo.getFileupload().getInputStream(), vo.getFileupload().getOriginalFilename());
                 
-                //Charset.forName("UTF-8") : 한글깨짐 방지를위함
+                FileBody multipart = new FileBody(convFile);
+                
                 StringBody txt = new StringBody(request.getParameter("txt"), Charset.forName("UTF-8"));
                 //API 서버에 전달하고자하는 PARAMETER
                 HttpEntity reqEntity = MultipartEntityBuilder.create().addPart("fileupload", multipart).addPart("txt", txt).build();
@@ -139,6 +188,7 @@ public class BoardController {
                 CloseableHttpResponse response = httpclient.execute(httppost);
                 try {
                     System.out.println(response.getStatusLine());
+                    
                     //API서버로부터 받은 JSON 문자열 데이터
                     System.out.println(EntityUtils.toString(response.getEntity()));
                     HttpEntity resEntity = response.getEntity();

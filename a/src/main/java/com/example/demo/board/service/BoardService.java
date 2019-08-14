@@ -3,6 +3,7 @@ package com.example.demo.board.service;
 import java.util.List;
 
 import com.example.demo.board.domain.BoardVO;
+import com.example.demo.board.domain.FileVO;
 
 public interface BoardService {
 
@@ -15,5 +16,6 @@ public interface BoardService {
 	 int boardUpdateService(BoardVO board) throws Exception;
 	    
 	 int boardDeleteService(int bno) throws Exception;
-
+	 
+	 int fileInsertService(FileVO file) throws Exception;
 }

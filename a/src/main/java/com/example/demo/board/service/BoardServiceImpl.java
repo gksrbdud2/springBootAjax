@@ -2,12 +2,11 @@ package com.example.demo.board.service;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.board.domain.BoardVO;
+import com.example.demo.board.domain.FileVO;
 import com.example.demo.board.mapper.BoardMapper;
 
 @Service
@@ -39,5 +38,8 @@ public class BoardServiceImpl implements BoardService {
 	        
 	        return mBoardMapper.boardDelete(bno);
 	    }
-
+	    
+	    public int fileInsertService(FileVO file) throws Exception{
+	        return mBoardMapper.fileInsert(file);
+	    }
 }
