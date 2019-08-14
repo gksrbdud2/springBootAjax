@@ -159,8 +159,8 @@
         function boardDetail(bno,subject,content){
             var a ='';
             var b ='';
-            a += '<input type="text" class="form-control" name="subject_'+bno+'" value="'+subject +'"/>';
-            a += '<input type="text" class="form-control" name="content_'+bno+'" value="'+content +'"/>';
+            a += '<input type="text" class="form-control" name="subject_'+bno+'" value="'+subject+'"/>';
+            a += '<input type="text" class="form-control" name="content_'+bno+'" value="'+content+'"/>';
             b += '<button class="btn btn-default" type="button" onclick="boardUpdateProc('+bno+');">수정</button>';
 
             
