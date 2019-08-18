@@ -9,8 +9,6 @@ public interface BoardService {
 
 	 List<BoardVO> boardListService() throws Exception;
 	 
-	 BoardVO boardDetailService(int bno) throws Exception;
-	 
 	 int boardInsertService(BoardVO board) throws Exception;
 	    
 	 int boardUpdateService(BoardVO board) throws Exception;

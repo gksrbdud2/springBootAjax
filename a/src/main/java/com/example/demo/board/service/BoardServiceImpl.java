@@ -15,15 +15,10 @@ public class BoardServiceImpl implements BoardService {
 	@Autowired
     BoardMapper mBoardMapper;
 
-	public List<BoardVO> boardListService() throws Exception {		
-		return mBoardMapper.boardList();
-	}
+		public List<BoardVO> boardListService() throws Exception {		
+			return mBoardMapper.boardList();
+		}
 	
-	   public BoardVO boardDetailService(int bno) throws Exception{
-	        
-	        return mBoardMapper.boardDetail(bno);
-	    }
-	    
 	    public int boardInsertService(BoardVO board) throws Exception{
 	        
 	        return mBoardMapper.boardInsert(board);

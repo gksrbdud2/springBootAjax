@@ -10,12 +10,9 @@ import com.example.demo.board.domain.FileVO;
 @Mapper
 public interface BoardMapper {
 
+	//게시글 목록
     public List<BoardVO> boardList() throws Exception;
 
-
-    //게시글 상세
-    public BoardVO boardDetail(int bno) throws Exception;
-    
     //게시글 작성  
     public int boardInsert(BoardVO board) throws Exception;
     

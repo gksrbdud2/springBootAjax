@@ -6,25 +6,101 @@
 			 boardList();
 		     FormatToUnixtime(unixtime);		    
 		});
-		
-		$('[name=boardInsertBtn]').click(function(){ //댓글 등록 버튼 클릭시 
-		          var insertData = $('[name=boardInsertForm]').serialize(); //boardInsertForm의 내용을 가져옴
-		          boardInsert(insertData); //Insert 함수호출(아래)
-		      });
+  
 	
-		//유닉스 타임스템프를 년 월 일 시 분 초로 변경하기 위한 함수ff
-		function FormatToUnixtime(unixtime) {
-		   var u = new Date(unixtime);
-		   return u.getUTCFullYear() +
-		       '-' + ('0' + u.getUTCMonth()).slice(-2) +
-		       '-' + ('0' + u.getUTCDate()).slice(-2) +
-		       ' ' + ('0' + u.getUTCHours()).slice(-2) +
-		       ':' + ('0' + u.getUTCMinutes()).slice(-2) +
-		       ':' + ('0' + u.getUTCSeconds()).slice(-2)
-		};     
+		//게시글 목록 
+		function boardList(){
+		    $.ajax({
+	     	    type: "GET",
+	            url: "get_list",
+	            success: function(data) {
+          		  var a =''; 
+          		  
+				  for (var str in data) {
+		          	a += '<tr><td>' + data[str]['bno'] + '</td>';
+		        	a += '<td>' + data[str]['subject'] + '</td>';
+					a += '<td>' + FormatToUnixtime(data[str]['reg_date']) + '</td>';
+					a += '<td><button class="btn btn-info" onclick="boardDetail(\''+data[str]['bno']+'\',\''+data[str]['subject']+'\',\''+data[str]['content']+'\',\''+FormatToUnixtime(data[str]['reg_date'])+'\');" data-toggle="modal" data-target="#modal_edit"> EDIT </button></td>';
+					a += '<td><button class="btn btn-danger" onclick="boardDelete(' + data[str]['bno'] + ');"> DELETE </button></td></tr>';	
+				  }
+
+				$("#tbody").html(a);
+			     paging(totalData, dataPerPage, pageCount, 1);
+			         
+		        },
+				error: function(error) {
+		        	alert("오류 발생" + error);
+		        }
+	    	});
+		}
+
+         
+        //게시글 등록
+       	$('[name=boardInsertBtn]').click(function(){ //댓글 등록 버튼 클릭시 
+			var insertData = $('[name=boardInsertForm]').serialize(); //boardInsertForm의 내용을 가져옴
+			boardInsert(insertData); //Insert 함수호출(아래)
+		});
+        
+        function boardInsert(insertData){
+            $.ajax({
+                url : '/insert',
+                type : 'post',
+                data : insertData,
+                success : function(data){
+                    if(data == 1) {
+                        boardList(); //게시글 작성 후 게시글 목록 reload
+                        $('[name=subject]').val('');
+                        $('[name=content]').val('');
+                    }
+                }
+            });
+        }
+         
+        //게시글 상세보기 - 게시글 상세보기(수정 폼) 
+        function boardDetail(bno,subject,content,reg_date){
+            var a ='';
+            var b ='';
+            a += '<table class="table" id="mytable">';
+            a += '<tr><th>No.</th><td>'+bno+'</td></tr>';
+            a += '<tr><th>제목</th><td><input type="text" class="form-control" name="subject_'+bno+'" value="'+subject+'"/></td></tr>';
+            a += '<tr><th>내용</th><td><input type="text" class="form-control" name="content_'+bno+'" value="'+content+'"/></td></tr>';
+            a += '<tr><th>작성일자</th><td>'+reg_date+'</td></tr></table>';
+            b += '<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>';
+            b += '<button class="btn btn-primary" type="button" onclick="boardUpdateProc('+bno+');">수정</button>';
+            $('#pp').html(a);
+            $('#kk').html(b);
+        }
+         
+        //게시글 수정
+        function boardUpdateProc(bno, subject, content){
+        	var updateSubject = $('[name=subject_'+bno+']').val();
+            var updateContent = $('[name=content_'+bno+']').val();
+            $.ajax({
+                url : '/updateProc',
+                type : 'post',
+                data : {'subject' : updateSubject, 'content' : updateContent, 'bno' : bno},
+                success : function(data){
+                    if(data == 1) {
+                    	boardList(); //댓글 수정후 목록 출력 
+                    }
+                }
+            });
+        }
+         
+        //게시글 삭제 
+        function boardDelete(bno){
+            $.ajax({
+                url : '/delete/'+bno,
+                type : 'post',
+                success : function(data){
+                    if(data == 1) {
+                    	boardList(); //게시글 삭제후 목록 출력 
+                    }
+                }
+            });
+        }
 		
-		
-		
+		//페이징처리
 		var dataPerPage = 5;    // 한 페이지에 나타낼 데이터 수..
 		var pageCount = 5;  // 한 화면에 나타낼 페이지버튼 수
 		var currentPage = 1;
@@ -111,89 +187,15 @@
 		})
 		}
 		
-		//게시글 목록 
-		function boardList(){
-		    $.ajax({
-	     	    type: "GET",
-	            url: "get_list",
-	            success: function(data) {
-          		  var a =''; 
-          		  
-				  for (var str in data) {
-		          	a += '<tr><td>' + data[str]['bno'] + '</td>';
-		        	a += '<td>' + data[str]['subject'] + '</td>';
-					a += '<td>' + data[str]['content'] + '</td>';
-					a += '<td>' + FormatToUnixtime(data[str]['reg_date']) + '</td>';
-					a += '<td><button class="btn btn-info" onclick="boardDetail(\''+data[str]['bno']+'\',\''+data[str]['subject']+'\',\''+ data[str]['content']+'\');" data-toggle="modal" data-target="#modal_edit"> EDIT </button></td>';
-					a += '<td><button class="btn btn-danger" onclick="boardDelete(' + data[str]['bno'] + ');"> DELETE </button></td></tr>';	
-				  }
-
-				$("#tbody").html(a);
-			     paging(totalData, dataPerPage, pageCount, 1);
-			         
-		        },
-				error: function(error) {
-		        	alert("오류 발생" + error);
-		        }
-	    	});
-		}
-
-         
-        //게시글 등록
-        function boardInsert(insertData){
-            $.ajax({
-                url : '/insert',
-                type : 'post',
-                data : insertData,
-                success : function(data){
-                    if(data == 1) {
-                        boardList(); //게시글 작성 후 게시글 목록 reload
-                        $('[name=subject]').val('');
-                        $('[name=content]').val('');
-                    }
-                }
-            });
-        }
-         
-        //게시글 상세보기 - 게시글 상세보기(수정 폼) 
-        function boardDetail(bno,subject,content){
-            var a ='';
-            var b ='';
-            a += '<input type="text" class="form-control" name="subject_'+bno+'" value="'+subject+'"/>';
-            a += '<input type="text" class="form-control" name="content_'+bno+'" value="'+content+'"/>';
-            b += '<button class="btn btn-default" type="button" onclick="boardUpdateProc('+bno+');">수정</button>';
-
-            
-            $('#pp').html(a);
-            $('#kk').html(b);
-        }
-         
-        //게시글 수정
-        function boardUpdateProc(bno, subject, content){
-        	var updateSubject = $('[name=subject_'+bno+']').val();
-            var updateContent = $('[name=content_'+bno+']').val();
-            
-            $.ajax({
-                url : '/updateProc',
-                type : 'post',
-                data : {'subject' : updateSubject, 'content' : updateContent, 'bno' : bno},
-                success : function(data){
-                    if(data == 1) boardList(); //댓글 수정후 목록 출력 
-                }
-            });
-        }
-         
-        //게시글 삭제 
-        function boardDelete(bno){
-            $.ajax({
-                url : '/delete/'+bno,
-                type : 'post',
-                success : function(data){
-             
-                    if(data == 1) {
-                    	boardList(); //게시글 삭제후 목록 출력 
-                    }
-                }
-            });
-        }
+		
+		//유닉스 타임스템프를 년 월 일 시 분 초로 변경하기 위한 함수
+		function FormatToUnixtime(unixtime) {
+		   var u = new Date(unixtime);
+		   return u.getUTCFullYear() +
+		       '-' + ('0' + u.getUTCMonth()).slice(-2) +
+		       '-' + ('0' + u.getUTCDate()).slice(-2) +
+		       ' ' + ('0' + u.getUTCHours()).slice(-2) +
+		       ':' + ('0' + u.getUTCMinutes()).slice(-2) +
+		       ':' + ('0' + u.getUTCSeconds()).slice(-2)
+		};   
  </script>

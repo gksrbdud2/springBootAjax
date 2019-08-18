@@ -1,24 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
        pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Listaaaa</title>
 	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 	<style>
-		table th, table td {text-align:center;}
+			th,td {text-align:left;}
 	</style>
 </head>
 <body> 
 	<div class="container">
 		<h2> 게시글 목록 </h2>		
 		<table class="table table-hover" id="mytable">
+			 <colgroup>
+               <col width="10%">
+               <col width="50%">
+               <col width="20%">
+               <col width="10%">
+               <col width="10%">
+            </colgroup>
 			<thead>
 				<tr>
                        <th>No.</th>
                        <th>제목</th>
-                       <th>내용</th>
                        <th>작성일자</th>
                        <th>수정</th>
                        <th>삭제</th>
@@ -42,6 +48,9 @@
 		<div class="modal fade" id="modal_create" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
+		      <div class="modal-header">
+		      	<h2 class="modal-title">게시글 등록</h2>
+		      </div>
 		      <div class="modal-body">
 		              <input type="text" class="form-control" id="subject" name="subject" placeholder="제목을 입력하세요.">
 		              <input type="text" class="form-control" id="content" name="content" placeholder="내용을 입력하세요.">
@@ -60,11 +69,13 @@
 		<div class="modal fade" id="modal_edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
+		      <div class="modal-header">
+		      	<h2 class="modal-title">게시글 수정</h2>
+		      </div>
 		      <div id="pp" class="modal-body">
 
 		      </div>
 			  <div id="kk" class="modal-footer">
-	          	<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
 	     	 </div>
 		    </div>
 		  </div>
