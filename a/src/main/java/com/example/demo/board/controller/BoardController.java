@@ -117,16 +117,16 @@ public class BoardController {
   
   //파일첨부 MultipartFile Submit
     @RequestMapping(value="/multipartSubmit")
-    public void multipartSubmit(HttpServletRequest request,  FileVO vo) {
+    public String multipartSubmit(Model model, HttpServletRequest request,  FileVO vo) {
         CloseableHttpClient httpclient = HttpClients.createDefault();
             try {
                 HttpPost httppost = new HttpPost("http://localhost:8080/multipartServer");
-                String fileSavePath = "C:/dev/";
+                String fileName = vo.getFileupload().getOriginalFilename();
+                String fileSavePath = "C:\\Users\\gksrb\\git\\please\\a\\src\\main\\resources\\static\\image\\";
                 File convFile = new File(fileSavePath + vo.getFileupload().getOriginalFilename());
                 vo.getFileupload().transferTo(convFile);
-                
                 FileBody multipart = new FileBody(convFile);
-                
+                //Charset.forName("UTF-8") : 한글깨짐 방지를위함
                 StringBody txt = new StringBody(request.getParameter("txt"), Charset.forName("UTF-8"));
                 //API 서버에 전달하고자하는 PARAMETER
                 HttpEntity reqEntity = MultipartEntityBuilder.create().addPart("fileupload", multipart).addPart("txt", txt).build();
@@ -134,16 +134,17 @@ public class BoardController {
                 CloseableHttpResponse response = httpclient.execute(httppost);
                 try {
                     System.out.println(response.getStatusLine());
-                    
                     //API서버로부터 받은 JSON 문자열 데이터
                     System.out.println(EntityUtils.toString(response.getEntity()));
                     HttpEntity resEntity = response.getEntity();
                     if (resEntity != null) {
                         System.out.println("Response content length: " + resEntity.getContentLength());
                     }
+                    EntityUtils.consume(resEntity);
                 } finally {
                     response.close();
                 }
+                model.addAttribute("fileName", fileName);
             } catch(Exception e){
                 e.printStackTrace();
             }finally {
@@ -151,6 +152,8 @@ public class BoardController {
             httpclient.close();
             } catch (IOException e) {}
             }
+            return "result"; 
+            
     }
 
 }
