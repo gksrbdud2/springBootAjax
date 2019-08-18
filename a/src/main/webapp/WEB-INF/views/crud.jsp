@@ -124,7 +124,7 @@
 		        	a += '<td>' + data[str]['subject'] + '</td>';
 					a += '<td>' + data[str]['content'] + '</td>';
 					a += '<td>' + FormatToUnixtime(data[str]['reg_date']) + '</td>';
-					a += '<td><button class="btn btn-info" onclick="boardDetail('+data[str]['bno']+','+data[str]['subject']+','+data[str]['content']+');" data-toggle="modal" data-target="#modal_edit"> EDIT </button></td>';
+					a += '<td><button class="btn btn-info" onclick="boardDetail(\''+data[str]['bno']+'\',\''+data[str]['subject']+'\',\''+ data[str]['content']+'\');" data-toggle="modal" data-target="#modal_edit"> EDIT </button></td>';
 					a += '<td><button class="btn btn-danger" onclick="boardDelete(' + data[str]['bno'] + ');"> DELETE </button></td></tr>';	
 				  }
 
