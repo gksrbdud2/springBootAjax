@@ -12,7 +12,7 @@
 		          boardInsert(insertData); //Insert 함수호출(아래)
 		      });
 	
-		//유닉스 타임스템프를 년 월 일 시 분 초로 변경하기 위한 함수f
+		//유닉스 타임스템프를 년 월 일 시 분 초로 변경하기 위한 함수ff
 		function FormatToUnixtime(unixtime) {
 		   var u = new Date(unixtime);
 		   return u.getUTCFullYear() +
