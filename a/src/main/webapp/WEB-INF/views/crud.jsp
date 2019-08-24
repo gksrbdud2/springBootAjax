@@ -66,7 +66,7 @@
             a += '<tr><th>내용</th><td><input type="text" class="form-control" name="content_'+bno+'" value="'+content+'"/></td></tr>';
             a += '<tr><th>작성일자</th><td>'+reg_date+'</td></tr></table>';
             b += '<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>';
-            b += '<button class="btn btn-primary" type="button" onclick="boardUpdateProc('+bno+');">수정</button>';
+            b += '<button class="btn btn-primary" type="button" onclick="boardUpdateProc('+bno+');" data-dismiss="modal">수정</button>';
             $('#pp').html(a);
             $('#kk').html(b);
         }

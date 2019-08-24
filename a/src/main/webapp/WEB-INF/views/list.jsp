@@ -57,7 +57,7 @@
 		      </div>
 			  <div class="modal-footer">
 	          	<button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
-	         	<input type="button" name="boardInsertBtn" class="btn btn-primary" value="등록완료">
+	         	<input type="button" name="boardInsertBtn" class="btn btn-primary" value="등록완료" data-dismiss="modal">
 	     	 </div>
 		    </div>
 		  </div>
